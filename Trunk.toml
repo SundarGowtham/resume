@@ -1,0 +1,22 @@
+[build]
+target = "index.html"
+dist = "dist"
+public_url = "/resume/"
+
+[watch]
+watch = ["src"]
+
+[serve]
+addresses = ["127.0.0.1"]
+port = 8080
+open = true
+
+[[hooks]]
+stage = "pre_build"
+command = "echo"
+command_arguments = ["Building Rust WASM project..."]
+
+[[hooks]]
+stage = "post_build"
+command = "echo"
+command_arguments = ["Build complete!"]
